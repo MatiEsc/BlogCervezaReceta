@@ -6,10 +6,10 @@
 
 <body>
     
-    {% for p in britanicasAle %}
+    {% for p in otras %}
     <li> {{p}} 
         <a class="btn btn-primary" href="{% url 'AppFinal:eliminarOtras' p.nombre %}">ELIMINAR RECETA</a>
-        <a class="btn btn-primary" href="{% url 'AppFinal:editarOtras' p.nombre %}">EDITAR RECETA</a>
+        <a class="btn btn-primary" href="{% url 'AppFinal:editarOtras'  %}">EDITAR RECETA</a>
     </li>
     {% endfor %}
 

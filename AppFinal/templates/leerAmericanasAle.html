@@ -10,8 +10,8 @@
     {% for p in americanasAle %}
     <li> {{p}} </li>
     <button>
-        <a href="{% url 'AppFinal:eliminarAmericanasAle' p.nombre %}"> Eliminar Receta</a>
-        <a href="{% url 'AppFinal:editarAmericanasAle' p.nombre %}"> Editar Receta</a>
+        <a class="btn btn-primary" href="{% url 'AppFinal:eliminarAmericanasAle' p.id %}">ELIMINAR RECETA</a>
+        <a class="btn btn-primary" href="{% url 'AppFinal:editarAmericanasAle'  %}">EDITAR RECETA</a>
     </button>
 
     

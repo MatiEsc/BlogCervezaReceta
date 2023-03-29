@@ -31,8 +31,31 @@
                         <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:inicio"%}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:mostrarReceta"%}">Mostrar Recetas</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        {% if not request.user.is_authenticated %}
+                        
+                        <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:login"%}">Iniciar Sesión</a></li>
+                        {% endif %}
+
+                        {% if request.user.is_authenticated %}
+
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                <img height="30px" src="{{url}}" />
+                                <span class="caret"></span>
+                                {{user.username}}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{% url "AppFinal:editarPerfil" %}">Editar Perfil</a>
+                                <a class="dropdown-item" href="{% url "AppFinal:AgregarAvatar" %}">Agregar Avatar</a>
+
+                                
+                                <a class="dropdown-item" href="{% url 'AppFinal:logout' %}">Cerrar Sesión</a>
+                            </div>
+                        </div> 
+                        
+
+                        {% endif %}
+                        <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:logout"%}">Logout</a></li>
                     </ul>
                 </div>
             </div>

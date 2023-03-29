@@ -4,11 +4,11 @@ from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from AppFinal.models import AmericanasAle, AlemanasChecasAustriacasAle, BelgasFrancesasAle, BritanicasAle, InternacionalesAle, AmericanasLager, AlemanasChecasAustriacasLager, InternacionalesLager, Otras, Avatar
+from AppFinal.models import AmericanasAle, AlemanasChecasAustriacasAle, BelgasFrancesasAle, BritanicasAle, InternacionalesAle, AmericanasLager, AlemanasChecasAustriacasLager, InternacionalesLager, Otras, Avatar, User
 from AppFinal.forms import AmericanasAleFormulario, AlemanasChecasAustriacasAleFormulario, BelgasFrancesasAleFormulario, BritanicasAleFormulario, InternacionalesAleFormulario, AmericanasLagerFormulario, AlemanasChecasAustriacasLagerFormulario, InternacionalesLagerFormulario, OtrasFormulario, AvatarFormulario
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
-from AppFinal.forms import UserRegisterForm, UserEditForm
+from AppFinal.forms import UserRegisterForm, UserEditForm, AvatarFormulario
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.hashers import make_password
 
@@ -298,7 +298,7 @@ def leerBritanicasAle(request):
     return render (request, "leerBritanicasAle.html", contexto)
 
 def leerInternacionalesAle(request):
-    internacionalesAle= internacionalesAle.objects.all()
+    internacionalesAle= InternacionalesAle.objects.all()
     contexto = {"internacionalesAle": internacionalesAle}
     return render (request, "leerInternacionalesAle.html", contexto)
 
@@ -318,7 +318,7 @@ def leerInternacionalesLager(request):
     return render (request, "leerInternacionalesLager.html", contexto)
 
 def leerOtras(request):
-    otras= otras.objects.all()
+    otras= Otras.objects.all()
     contexto = {"otras": otras}
     return render (request, "leerOtras.html", contexto)
 
@@ -752,63 +752,88 @@ def eliminarOtras(request, otras_nombre):
     return render (request, "leerOtras.html", contexto)
 
 
+def login_request(request):
+    if request.method== "POST":
+        form = AuthenticationForm(request, data = request.POST)
+        if form.is_valid():
+            usuario = form.cleaned_data.get("username")
+            contra= form.cleaned_data.get ("password")
+
+            user = authenticate(username=usuario, password=contra)
 
 
+            if user is not None:
+                login(request, user)
 
+                return render (request, "inicio.html", {"mensaje": "Bienvenido {usuario}"})
+            
+            else:
+                return render (request, "inicio.html", {"mensaje": "Error, datos incorrectos"})
+            
+        else:
+            return render (request, "inicio.html", {"mensaje": "Error, formulario erroneo"})
+        
+    form= AuthenticationForm()
 
+    return render (request, "login.html", {"form": form})
+    
 
+def register(request):
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
 
+            username= form.cleaned_data["username"] 
+            form.save()
+            return render(request, "inicio.html", {"mensaje": "Usuario Creado"}) 
+        
+    else:
+        form=UserRegisterForm()
 
+    return render(request, "registro.html", {"form":form})
 
+@login_required
+def inicio(request):
+    avatares = Avatar.objects.filter(user=request.user.id)
+    url = None
+    if avatares:
+        url= avatares[0].imagen.url
+    return render(request, 'inicio.html', {'url': url})
 
-class AmericanasAleList(ListView):
-    model= AmericanasAle
-    template_name="americanasAle_list.html"
+@login_required
+def editarPerfil(request):
+    usuario = request.user 
+    if request.method == 'POST':
+        miFormulario = UserEditForm(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid():
+            informacion = miFormulario.cleaned_data
+            print(miFormulario)
+            usuario.email = informacion['email']
+            usuario.first_name = informacion['first_name']
+            usuario.last_name = informacion['last_name']
+            if informacion['password1'] == informacion['password2']:
+                usuario.password = make_password(informacion['password1'])
+                usuario.save()
+            else:
+                return render(request, 'inicio.html', {'mensaje':'Contraseña incorrecta.'})
 
-class AmericanasAleDetalle(DetailView):
-    model= AmericanasAle
-    template_name="americanasAle_detalle.html"
+            return render(request, 'inicio.html')
+    else:
+        miFormulario = UserEditForm(initial={'email':usuario.email})
 
-class AmericanasAleCreacion(CreateView):
-    model= AmericanasAle
-    template_name="americanasAle_form.html"
-    success_url= reverse_lazy("AppFinal:list")
-    fields=["nombre", "maltas", "lupulo", "levadura", "adicionales", "procesoDeCoccion", "emailDeContacto", "fechaDePublicacion", "imagen"]
+    return render(request, "editarPerfil.html", {"miFormulario":miFormulario, "usuario":usuario})
 
-class AmericanasAleUpdate(UpdateView):
-    model= AmericanasAle
-    success_url= "/AppFinal/americanaAle/list"
-    template_name = "americanasAle_form.html"
-    fields = ["nombre", "maltas", "lupulo", "levadura", "adicionales", "procesoDeCoccion", "emailDeContacto", "fechaDePublicacion", "imagen"]
+@login_required
+def agregarAvatar(request):
+    if request.method == 'POST':
+        miFormulario = AvatarFormulario(request.POST, request.FILES)
+        if miFormulario.is_valid():
+            u = User.objects.get(username=request.user)
+            avatar = Avatar(user=u, imagen=miFormulario.cleaned_data['imagen'])
+            avatar.save()
 
-class AmericanasAleDelete(DeleteView):
-    model= AmericanasAle
-    template_name= "americanasAle_confirm_delete.html"
-    success_url = "/AppFinal/americanasAle/list"
-
-
-class AmericanasLagerList(ListView):
-    model = AmericanasLager
-    template_name= "americanasLager_list.html"
-
-class AmericanasLagerDetalle(DetailView):
-    model = AmericanasLager
-    template_name= "americanasLager_detalle.html"
-    context_object_name="americanasLager"
-
-class AmericanasLagerCreacion(CreateView):
-    model =AmericanasLager
-    template_name= "americanasLager_form.html"
-    succes_url= reverse_lazy ("AppFinal:list")
-    fields = ["subCategoria","nombre", "maltas", "lupulo", "levadura", "adicionales", "procesoDeCoccion"]
-
-class AmericanasLagerUpdate(UpdateView):
-    model= AmericanasLager
-    success_url= "/AppFinal/americanaLager/list"
-    template_name = "americanasLager_form.html"
-    fields = ["subCategoria","nombre", "maltas", "lupulo", "levadura", "adicionales", "procesoDeCoccion"]
-
-class AmericanasLagerDelete(DeleteView):
-    model= AmericanasLager
-    template_name= "americanasLager_confirm_delete.html"
-    success_url = "/AppFinal/americanasLager/list"
+            return render(request, 'inicio.html')
+    else:
+        miFormulario = AvatarFormulario()
+    return render(request, 'agregarAvatar.html', {'miFormulario':miFormulario})

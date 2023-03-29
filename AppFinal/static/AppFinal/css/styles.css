@@ -11781,3 +11781,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 .color-rojo{
   color:red;
 }
+
+
+body{
+  background-image: url("imag/imag.jpg");
+}

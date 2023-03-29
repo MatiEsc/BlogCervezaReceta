@@ -112,7 +112,7 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "email", 'password1' , 'password2']
-        help_text = {k:"" for k in fields}
+        #help_text = {k:"" for k in fields}
 
 class UserEditForm(UserCreationForm):
     email = forms.EmailField(label="Ingrese su email:")
@@ -123,7 +123,7 @@ class UserEditForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['email', 'password1', 'password2', 'last_name', 'first_name']
+        fields = ["username", 'email', 'password1', 'password2', 'last_name', 'first_name']
         help_texts = {k:"" for k in fields}
 
 class AvatarFormulario(forms.Form):
@@ -134,3 +134,5 @@ class AvatarFormulario(forms.Form):
         model= User
         fields= ["imagen"]
         help_texts= {k:"" for k in fields}
+
+

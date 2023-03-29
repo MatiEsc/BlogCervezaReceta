@@ -46,18 +46,11 @@ urlpatterns = [
      path ("eliminarInternacionalesLager/<internacionalesLager_nombre>/", views.eliminarInternacionalesLager, name="eliminarInternacionalesLager"),
      path ("eliminarOtras/<otras_nombre>/", views.eliminarOtras, name="eliminarOtras"),
 
+     path ("login", views.login_request, name="login"),
+     path ("register", views.register, name="register"),
+     path ("logout", LogoutView.as_view(template_name="logout.html"), name="logout"),
+     path ("editarPerfil", views.editarPerfil,  name="editarPerfil"),
+     path('agregarAvatar', views.agregarAvatar, name='AgregarAvatar'),
 
-
-    #path ("americanasLager/list", views.AmericanasLagerList.as_view(), name= "list"),
-    #path ("americanasLager/<int:pk>", views.AmericanasLagerDetalle.as_view(), name= "detail"),
-    #path("nuevo", views.AmericanasLagerCreacion.as_view(), name ="new"),
-    #path("editar/<int:pk>", views.AmericanasLagerUpdate.as_view(), name ="edit"),
-    #path("borrar/<int:pk>", views.AmericanasLagerDelete.as_view(), name ="delete"),
-
-    #path("americanasAle/list", views.AmericanasAleList.as_view(), name="list"),
-    #path ("<int:pk>", views.AmericanasAleDetalle.as_view(), name= "detail"),
-    #path("nuevo", views.AmericanasAleCreacion.as_view(), name ="new"),
-    #path("editar/<int:pk>", views.AmericanasAleUpdate.as_view(), name ="edit"),
-    #path("borrar/<int:pk>", views.AmericanasAleDelete.as_view(), name ="delete"),
 
 ]

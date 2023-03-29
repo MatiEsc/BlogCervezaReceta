@@ -9,7 +9,7 @@
     {% for p in belgasFrancesasAle %}
     <li> {{p}} 
         <a class="btn btn-primary" href="{% url 'AppFinal:eliminarBelgasFrancesasAle' p.nombre %}">ELIMINAR RECETA</a>
-        <a class="btn btn-primary" href="{% url 'AppFinal:editarBelgasFrancesasAle' p.nombre %}">EDITAR RECETA</a>
+        <a class="btn btn-primary" href="{% url 'AppFinal:editarBelgasFrancesasAle'  %}">EDITAR RECETA</a>
     </li>
     {% endfor %}
 
