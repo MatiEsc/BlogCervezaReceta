@@ -31,6 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:inicio"%}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:mostrarReceta"%}">Mostrar Recetas</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:logout"%}">Logout</a></li>
                         {% if not request.user.is_authenticated %}
                         
                         <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:login"%}">Iniciar Sesión</a></li>
@@ -39,7 +40,7 @@
                         {% if request.user.is_authenticated %}
 
                         <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img height="30px" src="{{url}}" />
                                 <span class="caret"></span>
                                 {{user.username}}
@@ -55,7 +56,7 @@
                         
 
                         {% endif %}
-                        <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:logout"%}">Logout</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -69,7 +70,7 @@
 
             <div class="container">
                 <div class="masthead-subheading">Bienvenidos!!</div>
-                <div class="masthead-heading text-uppercase">EL MEJOR LUGAR PARA GUARDAR TU RECETA Y DEJAR TU HELLA</div>
+                <div class="masthead-heading text-uppercase">EL MEJOR LUGAR PARA GUARDAR TU RECETA Y DEJAR TU HUELLA</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="{% url "AppFinal:cargarReceta" %}">Carga tu receta</a>
             </div>
         </header>

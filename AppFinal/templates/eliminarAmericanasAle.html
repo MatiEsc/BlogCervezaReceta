@@ -11,7 +11,7 @@
 
     {% endif %}
 
-    <form action="" method="POST"> {% csrf_token %}
+    <form action="{% url 'eliminarAmericanasAle' americanasAle.id %}" method="POST"> {% csrf_token %}
         <table>
             {{ miFormulario.as_table }}
         </table>
