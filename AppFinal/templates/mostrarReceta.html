@@ -1,0 +1,40 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>MOSTRAR RECETAS</h1>
+    <p>Elegi el estilo de las recetas que deseas ver</p>
+    <p>ALE</p>
+    
+                
+    <a class="navbar-brand" href="{% url "AppFinal:leerAmericanasAle"%}">Americanas Ale</a>
+    
+    <a class="navbar-brand" href="{% url "AppFinal:leerAlemanasChecasAustriacasAle"%}">Alemanas Checas Austriacas Ale</a>
+
+
+    <a class="navbar-brand" href="{% url "AppFinal:leerBelgasFrancesasAle"%}">Belgas Francesas Ale</a>
+    <a class="navbar-brand" href="{% url "AppFinal:leerBritanicasAle"%}">Britanicas Ale</a>
+    <a class="navbar-brand" href="{% url "AppFinal:leerInternacionalesAle"%}">Internacionales Ale</a>
+        
+
+
+    
+    <p>LAGER</p>
+
+  
+                    
+    <a class="navbar-brand" href="{% url "AppFinal:leerAmericanasLager"%}">Americanas Lager</a>
+    <a class="navbar-brand" href="{% url "AppFinal:leerAlemanasChecasAustriacasLager"%}">Alemanas Checas Austriacas Lager</a>
+    <a class="navbar-brand" href="{% url "AppFinal:leerInternacionalesLager"%}">Internacionales Lager</a>
+        
+
+    <p>OTRAS</p>
+
+    
+    <a class="navbar-brand" href="{% url "AppFinal:leerOtras"%}">Otras</a>
+
+{% endblock %}

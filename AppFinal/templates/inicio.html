@@ -1,0 +1,191 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <div class="text-center">
+        <img height="40px" scr="{{url}}">
+        <h3> Hola {{user.username}}</h3>
+
+    </div>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">listado de estilos</h2>
+                <h3 class= "section-subheading text-muted ">A continuacion podras ver la clasificacion de estilos segun BJCP</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">• Ales
+                        - Americanas
+                        - Alemanas, checas y austríacas
+                        - Belgas y francesas
+                        - Británicas
+                        - Internacionales</h4>
+                    <p class="text-muted">
+                        
+• Ales
+- Americanas
+1C. Cream Ale
+1D. American Wheat Beer
+18A. Blond Ale
+18B. American Pale Ale
+19A. American Amber Ale
+19C. American Brown Ale
+20A. American Porter
+20B. American Stout
+21A. American IPA
+21B. Specialty IPA
+21C. Hazy Ipa
+22A. Double IPA
+22B. American Strong Ale
+22C. American Barleywine
+22D. Wheatwine
+27. Historical Beer (Kentucky Common)
+27. Historical Beer (Pre-Pro Porter)
+X1. Dorada Pampeana
+X2. IPA Argenta
+- Alemanas, checas y austríacas
+5B. Kölsch
+7B. Altbier
+10A. Weissbier
+10B. Dunkles Weissbier
+Página 3 de 9 Rev Setiembre 2022
+10C. Weizenbock
+27. Historical Beer (Roggenbier)
+- Belgas y francesas
+24A. Witbier
+24B. Belgian Pale Ale
+25A. Belgian Blond Ale
+25B. Saison
+25C. Belgian Golden Strong Ale
+26A. Trappist Single
+26B. Belgian Dubbel
+26C. Belgian Tripel
+26D. Belgian Dark Strong Ale
+- Británicas
+11A. Ordinary Bitter
+11B. Best Bitter
+11C. Strong Bitter
+12A. British Golden Ale
+12C. English IPA
+13A. Dark Mild
+13B. British Brown Ale
+13C. English Porter
+14A. Scottish Light
+14B. Scottish Heavy
+14C. Scottish Export
+15A. Irish Red Ale
+15B. Irish Stout
+15C. Irish Extra Stout
+16A. Sweet Stout
+16B. Oatmeal Stout
+16C. Tropical Stout
+16D. Foreign Extra Stout
+17A. British Strong Ale
+17B. Old Ale
+17C. Wee Heavy
+17D. English Barleywine
+20C. Imperial Stout
+27. Historical Beer (London Brown Ale)
+- Internacionales
+12B. Australian Sparkling Ale
+27. Historical Beer (Piwo Grodziskie)
+27. Historical Beer (Sahti)
+                     
+                        
+                       </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">• Lagers
+                        - Americanas
+                        - Alemanas, checas y austríacas
+                        - Internacionales
+                        </h4>
+                    <p class="text-muted">
+                        • Lagers
+                        - Americanas
+                        1A. American Light Lager
+                        1B. American Lager
+                        27. Historical Beer (Pre-Pro Lager)
+                        - Alemanas, checas y austríacas
+                        3A. Czech Pale Lager
+                        3B. Czech Premium Pale Lager
+                        3C. Czech Amber Lager
+                        3D. Czech Dark Lager
+                        4A. Munich Helles
+                        4B. Festbier
+                        4C. Helles Bock
+                        5A. German Leichtbier
+                        5C. Helles Exportbier
+                        5D. German Pils
+                        Página 4 de 9 Rev Setiembre 2022
+                        6A. Märzen
+                        6B. Rauchbier
+                        6C. Dunkles Bock
+                        7A. Vienna Lager
+                        7C. Kellerbier
+                        8A. Munich Dunkel
+                        8B. Schwarzbier
+                        9A. Doppelbock
+                        8B. Eisbock
+                        - Internacionales
+                        2A. International Pale Lager
+                        2B. International Amber Lager
+                        2C. International Dark Lager
+                        X5. New Zealand Pilsner.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Otras</h4>
+                    <p class="text-muted">• Especiales, híbridas o mixtas de cualquier origen
+                        9C. Baltic Porter
+                        19B. California Common
+                        23A. Berliner Weisse
+                        23B. Flanders Red Ale
+                        23C. Oud Bruin
+                        23D. Lambic
+                        23E. Gueuze
+                        23F. Fruit Lambic
+                        23G. Gose
+                        24C. Bière de Garde
+                        27. Historical Beer (Lichtenhainer)
+                        28A. Brett Beer
+                        28B. Mixed-Fermentation Sour Beer
+                        28C. Wild Specialty Beer
+                        29A. Fruit Beer
+                        29B. Fruit and Spice Beer
+                        29C. Specialty Fruit Beer
+                        30A. Spice, Herb, or Vegetable Beer
+                        30B. Autumn Seasonal Beer
+                        30C. Winter Seasonal Beer
+                        31A. Alternative Grain Beer
+                        31B. Alternative Sugar Beer
+                        32A. Classic Style Smoked Beer
+                        32B. Specialty Smoked Beer
+                        33A. Wood-Aged Beer
+                        33B. Specialty Wood-Aged Beer
+                        34A. Clone Beer
+                        34B. Mixed-Style Beer
+                        34C. Experimental Beer
+                        X3. Italian Grape Ale
+                        X4. Catharina Sour.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+{% endblock %}

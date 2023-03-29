@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Americanas Lager </h1>
+    
+    {% if miFormulario.errors %}
+    <p style="color: red;"> Están mal los datos, revisar.</p>
+
+    {% endif %}
+
+    <form action="" method="POST" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        {{ form.as_p}}
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+ 
+
+{% endblock %}

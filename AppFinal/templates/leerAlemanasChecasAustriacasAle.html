@@ -1,0 +1,31 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+<body>
+    
+    {% for p in alemanasChecasAustriacasAle %}
+    <li> {{p}} </li>
+
+
+        <a class="btn btn-primary" href="{% url "AppFinal:eliminarAlemanasChecasAustriacasAle" p.nombre %}">ELIMINAR RECETA</a>
+        <a class="btn btn-primary" href="{% url "AppFinal:editarAlemanasChecasAustriacasAle" p.nombre %}">EDITAR RECETA</a>
+    
+    {% endfor %}
+<br>
+
+</body>
+
+            <a class="btn btn-primary" href="{% url 'AppFinal:alemanasChecasAustriacasAle' %}">AGREGAR RECETA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+

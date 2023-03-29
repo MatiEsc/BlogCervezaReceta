@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<body>
+    
+    {% for p in britanicasAle %}
+    <li> {{p}} 
+        <a class="btn btn-primary" href="{% url 'AppFinal:eliminarOtras' p.nombre %}">ELIMINAR RECETA</a>
+        <a class="btn btn-primary" href="{% url 'AppFinal:editarOtras' p.nombre %}">EDITAR RECETA</a>
+    </li>
+    {% endfor %}
+
+    <br>
+    <a class="btn btn-primary" href="{% url 'AppFinal:otras' %}">AGREGAR RECETA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+                
+    </div>
+</body>
+
+{% endblock %}
