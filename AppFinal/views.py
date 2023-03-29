@@ -679,18 +679,13 @@ def editarOtras(request, otras_nombre):
         return render (request, "editarOtras.html",
                             {"miFormulario":miFormulario, "otras_nombre":otras_nombre})
 
-def eliminarAmericanasAle(request, americanasAle_id):
-    try:
-        americanasAle = AmericanasAle.objects.get(id=americanasAle_id)
-        americanasAle.delete()
-    except AmericanasAle.DoesNotExist:
-        # El objeto AmericanasAle con el ID especificado no existe en la base de datos.
-        # Aquí puedes mostrar un mensaje de error al usuario o redirigirlo a otra página.
-        pass
+def eliminarAmericanasAle(request, americanasAle_nombre):
+    americanasAle= AmericanasAle.objects.get(nombre=americanasAle_nombre)
+    americanasAle.delete()
 
-    americanasAle = AmericanasAle.objects.all()
+    americanasAle=AmericanasAle.objects.all()
     contexto = {"americanasAle": americanasAle}
-    return render(request, "leerAmericanasAle.html", contexto)
+    return render (request, "leerAmericanas.html", contexto)
 
 def eliminarAlemanasChecasAustriacasAle(request, alemanasChecasAustriacasAle_nombre):
     alemanasChecasAustriacasAle= AlemanasChecasAustriacasAle.objects.get(nombre=alemanasChecasAustriacasAle_nombre)
