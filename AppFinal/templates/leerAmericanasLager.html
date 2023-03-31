@@ -7,10 +7,15 @@
 <body>
     <li>Americanas Lager</li>
     {% for p in americanasLager %}
-    <li> {{p}} 
+        {% if p.nombre %}
+        <li> {{p}}</li>
+        <li> {% if p.imagen %} 
+                 <img src=" {{p.imagen.url}} " alt="mcmd">
+            {% endif %} </li>
         <a class="btn btn-primary" href="{% url 'AppFinal:eliminarAmericanasLager' p.nombre %}">ELIMINAR RECETA</a>
         <a class="btn btn-primary" href="{% url 'AppFinal:editarAmericanasLager' p.nombre  %}">EDITAR RECETA</a>
     </li>
+        {% endif %}
     {% endfor %}
 
     <br>

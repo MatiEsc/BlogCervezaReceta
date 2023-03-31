@@ -5,14 +5,18 @@
 {% block contenidoQueCambia %}
 
 <body>
-    <li>Belgas Francesas</li>
+    <li>Belgas Francesas Ale</li>
     {% for p in belgasFrancesasAle %}
-    <li> {{p}} 
-        <a class="btn btn-primary" href="{% url 'AppFinal:eliminarBelgasFrancesasAle' p.nombre %}">ELIMINAR RECETA</a>
-        <a class="btn btn-primary" href="{% url 'AppFinal:editarBelgasFrancesasAle' p.nombre  %}">EDITAR RECETA</a>
-    </li>
+        {% if p.nombre %}
+        <li> {{p}} </li>
+        <li>{% if p.imagen %} 
+                <img src=" {{p.imagen.url}} " alt="mcmd">
+            {% endif %}</li>   
+            <a class="btn btn-primary" href="{% url 'AppFinal:eliminarBelgasFrancesasAle' p.nombre %}">ELIMINAR RECETA</a>
+            <a class="btn btn-primary" href="{% url 'AppFinal:editarBelgasFrancesasAle'  p.nombre %}">EDITAR RECETA</a>
+        </li>
+        {% endif %}
     {% endfor %}
-
     <br>
     <a class="btn btn-primary" href="{% url 'AppFinal:belgasFrancesasAle' %}">AGREGAR RECETA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>

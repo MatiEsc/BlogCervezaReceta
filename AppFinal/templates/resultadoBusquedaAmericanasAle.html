@@ -25,9 +25,13 @@
             <li> Proceso de Coccion: {{americanasAle.procesoDeCoccion}} </li>
             <li> Email de Contacto: {{americanasAle.emailDeContacto}} </li>
             <li> Fecha de Publicacion: {{americanasAle.fechaDePublicacion}} </li>
-            <li> {{americanasAle.imagen}} </li>
+            <li>{% if americanasAle.imagen %} 
+                imagen: <img src="{{ americanasAle.imagen.url }}" alt="mcmd">
+            {% endif %}</li>
         {% endfor %}
     </ul>
+
+
 
     {% else %}
     <p>La receta que se busca no se encuentra.</p>

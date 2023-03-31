@@ -26,7 +26,9 @@
             <li> Proceso de Coccion: {{internacionalesAle.procesoDeCoccion}} </li>
             <li> Email de Contacto: {{internacionalesAle.emailDeContacto}} </li>
             <li> Fecha de Publicacion: {{internacionalesAle.fechaDePublicacion}} </li>
-            <li> {{internacionalesAle.imagen}} </li>
+            <li>{% if internacionalesAle.imagen %} 
+                <img src="{{ internacionalesAle.imagen.url }}" alt="mcmd">
+            {% endif %}</li>
         {% endfor %}
     </ul>
     {% else %}

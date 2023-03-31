@@ -6,15 +6,19 @@
 
 
 <body>
-    <LI>Alemanas Checas Austriacas Ale</LI>
-    {% for p in alemanasChecasAustriacasAle %}
-    <li> {{p}} </li>
-
-
-        <a class="btn btn-primary" href="{% url "AppFinal:eliminarAlemanasChecasAustriacasAle" p.nombre %}">ELIMINAR RECETA</a>
-        <a class="btn btn-primary" href="{% url "AppFinal:editarAlemanasChecasAustriacasAle" p.nombre  %}">EDITAR RECETA</a>
-    
-    {% endfor %}
+    <body>
+        <li>Alemanas Checas Austriacas Ale</li>
+        {% for p in alemanasChecasAustriacasAle %}
+            {% if p.nombre %}
+            <li> {{p}} </li>
+            <li>{% if p.imagen %} 
+                     <img src=" {{p.imagen.url}} " alt="mcmd">
+                {% endif %}</li>
+                <a class="btn btn-primary" href="{% url 'AppFinal:eliminarAlemanasChecasAustriacasAle' p.nombre %}">ELIMINAR RECETA</a>
+                <a class="btn btn-primary" href="{% url 'AppFinal:editarAlemanasChecasAustriacasAle'  p.nombre %}">EDITAR RECETA</a>
+            </li>
+            {% endif %}
+        {% endfor %}
 <br>
 
 </body>

@@ -17,7 +17,7 @@ class AmericanasAle(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} "
 
 
 class AlemanasChecasAustriacasAle(models.Model):
@@ -33,7 +33,7 @@ class AlemanasChecasAustriacasAle(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} "
 
 
 class BelgasFrancesasAle(models.Model):
@@ -49,7 +49,7 @@ class BelgasFrancesasAle(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} "
 
 class BritanicasAle(models.Model):
     nombre=models.CharField(max_length=40)
@@ -64,7 +64,7 @@ class BritanicasAle(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"    
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} "    
 
 
 class InternacionalesAle(models.Model):
@@ -80,7 +80,7 @@ class InternacionalesAle(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion}"
 
 class AmericanasLager(models.Model):
     nombre=models.CharField(max_length=40)
@@ -95,7 +95,7 @@ class AmericanasLager(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"        
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} "        
 
 
 class AlemanasChecasAustriacasLager(models.Model):
@@ -111,7 +111,7 @@ class AlemanasChecasAustriacasLager(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion}"
 
 class InternacionalesLager(models.Model):
     nombre=models.CharField(max_length=40)
@@ -126,7 +126,7 @@ class InternacionalesLager(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion}"
 
 class Otras(models.Model):
     nombre=models.CharField(max_length=40)
@@ -141,7 +141,7 @@ class Otras(models.Model):
 
 
     def __str__(self):
-        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} - imagen:{self.imagen}"
+        return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} "
 
 class Avatar(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

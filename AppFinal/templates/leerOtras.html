@@ -6,11 +6,16 @@
 
 <body>
     <li>Otras</li>
-    {% for p in otras %}
-    <li> {{p}} 
-        <a class="btn btn-primary" href="{% url 'AppFinal:eliminarOtras' p.nombre %}">ELIMINAR RECETA</a>
-        <a class="btn btn-primary" href="{% url 'AppFinal:editarOtras' p.nombre  %}">EDITAR RECETA</a>
-    </li>
+    {% for p in otras%}
+        {% if p.nombre %}
+        <li> {{p}} </li>
+        <li>    {% if p.imagen %} 
+                <img src=" {{p.imagen.url}} " alt="mcmd">
+            {% endif %} </li>
+            <a class="btn btn-primary" href="{% url 'AppFinal:eliminarOtras' p.nombre %}">ELIMINAR RECETA</a>
+            <a class="btn btn-primary" href="{% url 'AppFinal:editarOtras'  p.nombre %}">EDITAR RECETA</a>
+        </li>
+        {% endif %}
     {% endfor %}
 
     <br>

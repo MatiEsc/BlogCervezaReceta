@@ -25,7 +25,9 @@
             <li> Proceso de Coccion: {{americanasLager.procesoDeCoccion}} </li>
             <li> Email de Contacto: {{americanasLager.emailDeContacto}} </li>
             <li> Fecha de Publicacion: {{americanasLager.fechaDePublicacion}} </li>
-            <li> {{americanasLager.imagen}} </li>
+            <li>{% if americanasLager.imagen %} 
+                <img src="{{ americanasLager.imagen.url }}" alt="mcmd">
+            {% endif %}</li>
         {% endfor %}
     </ul>
 

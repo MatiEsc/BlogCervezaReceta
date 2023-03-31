@@ -53,7 +53,7 @@ def americanasAle(request):
 
 def alemanasChecasAustriacasAle(request):
     if request.method == 'POST':
-        miFormulario = AlemanasChecasAustriacasAleFormulario(request.POST)
+        miFormulario = AlemanasChecasAustriacasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -69,7 +69,8 @@ def alemanasChecasAustriacasAle(request):
                                                                     adicionales=informacion["adicionales"],
                                                                     procesoDeCoccion=informacion['proceso_De_Coccion'],
                                                                     emailDeContacto=informacion["email_De_Contacto"],
-                                                                    fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                                                    fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                                                    imagen=informacion["imagen"])
 
             alemanasChecasAustriacasAle.save()
 
@@ -82,7 +83,7 @@ def alemanasChecasAustriacasAle(request):
 
 def belgasFrancesasAle(request):
     if request.method == 'POST':
-        miFormulario = BelgasFrancesasAleFormulario(request.POST)
+        miFormulario = BelgasFrancesasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -97,7 +98,8 @@ def belgasFrancesasAle(request):
                                           adicionales=informacion["adicionales"],
                                           procesoDeCoccion=informacion['proceso_De_Coccion'],
                                           emailDeContacto=informacion["email_De_Contacto"],
-                                          fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                          fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                          imagen=informacion["imagen"])
 
             belgasFrancesasAle.save()
 
@@ -110,7 +112,7 @@ def belgasFrancesasAle(request):
 
 def britanicasAle(request):
     if request.method == 'POST':
-        miFormulario = BritanicasAleFormulario(request.POST)
+        miFormulario = BritanicasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -125,7 +127,8 @@ def britanicasAle(request):
                                           adicionales=informacion["adicionales"],
                                           procesoDeCoccion=informacion['proceso_De_Coccion'],
                                           emailDeContacto=informacion["email_De_Contacto"],
-                                          fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                          fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                          imagen=informacion["imagen"])
 
             britanicasAle.save()
 
@@ -138,7 +141,7 @@ def britanicasAle(request):
 
 def internacionalesAle(request):
     if request.method == 'POST':
-        miFormulario = InternacionalesAleFormulario(request.POST)
+        miFormulario = InternacionalesAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -153,7 +156,8 @@ def internacionalesAle(request):
                                           adicionales=informacion["adicionales"],
                                           procesoDeCoccion=informacion['proceso_De_Coccion'],
                                           emailDeContacto=informacion["email_De_Contacto"],
-                                          fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                          fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                          imagen=informacion["imagen"])
 
             internacionalesAle.save()
 
@@ -166,7 +170,7 @@ def internacionalesAle(request):
 
 def americanasLager(request):
     if request.method == 'POST':
-        miFormulario = AmericanasLagerFormulario(request.POST)
+        miFormulario = AmericanasLagerFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -181,7 +185,8 @@ def americanasLager(request):
                                           adicionales=informacion["adicionales"],
                                           procesoDeCoccion=informacion['proceso_De_Coccion'],
                                           emailDeContacto=informacion["email_De_Contacto"],
-                                          fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                          fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                          imagen=informacion["imagen"])
 
             americanasLager.save()
 
@@ -195,7 +200,7 @@ def americanasLager(request):
 
 def alemanasChecasAustriacasLager(request):
     if request.method == 'POST':
-        miFormulario = AlemanasChecasAustriacasLagerFormulario(request.POST)
+        miFormulario = AlemanasChecasAustriacasLagerFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -210,7 +215,8 @@ def alemanasChecasAustriacasLager(request):
                                           adicionales=informacion["adicionales"],
                                           procesoDeCoccion=informacion['proceso_De_Coccion'],
                                           emailDeContacto=informacion["email_De_Contacto"],
-                                          fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                          fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                          imagen=informacion["imagen"])
 
             alemanasChecasAustriacasLager.save()
 
@@ -222,7 +228,7 @@ def alemanasChecasAustriacasLager(request):
 
 def internacionalesLager(request):
     if request.method == 'POST':
-        miFormulario = InternacionalesLagerFormulario(request.POST)
+        miFormulario = InternacionalesLagerFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -237,7 +243,8 @@ def internacionalesLager(request):
                                           adicionales=informacion["adicionales"],
                                           procesoDeCoccion=informacion['proceso_De_Coccion'],
                                           emailDeContacto=informacion["email_De_Contacto"],
-                                          fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                          fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                          imagen=informacion["imagen"])
 
             internacionalesLager.save()
 
@@ -249,7 +256,7 @@ def internacionalesLager(request):
 
 def otras(request):
     if request.method == 'POST':
-        miFormulario = OtrasFormulario(request.POST)
+        miFormulario = OtrasFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -264,7 +271,8 @@ def otras(request):
                                           adicionales=informacion["adicionales"],
                                           procesoDeCoccion=informacion['proceso_De_Coccion'],
                                           emailDeContacto=informacion["email_De_Contacto"],
-                                          fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                          fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                          imagen=informacion["imagen"])
 
             otras.save()
 
@@ -490,7 +498,7 @@ def editarAlemanasChecasAustriacasAle(request, alemanasChecasAustriacasAle_nombr
     alemanasChecasAustriacasAle= AlemanasChecasAustriacasAle.objects.get(nombre=alemanasChecasAustriacasAle_nombre)
 
     if request.method == "POST":
-        miFormulario= AlemanasChecasAustriacasAleFormulario(request.POST)
+        miFormulario= AlemanasChecasAustriacasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -529,7 +537,7 @@ def editarBelgasFrancesasAle(request, belgasFrancesasAle_nombre):
     belgasFrancesasAle= BelgasFrancesasAle.objects.get(nombre=belgasFrancesasAle_nombre)
 
     if request.method == "POST":
-        miFormulario= BelgasFrancesasAleFormulario(request.POST)
+        miFormulario= BelgasFrancesasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -568,7 +576,7 @@ def editarBritanicasAle(request, editarBritanicasAle_nombre):
     britanicasAle= BritanicasAle.objects.get(nombre=editarBritanicasAle_nombre)
 
     if request.method == "POST":
-        miFormulario= BritanicasAleFormulario(request.POST)
+        miFormulario= BritanicasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -608,7 +616,7 @@ def editarInternacionalesAle(request, editarInternacionalesAle_nombre):
     internacionalesAle= InternacionalesAle.objects.get(nombre=editarInternacionalesAle_nombre)
 
     if request.method == "POST":
-        miFormulario= InternacionalesAleFormulario(request.POST)
+        miFormulario= InternacionalesAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -648,7 +656,7 @@ def editarAmericanasLager(request, editarAmericanasLager_nombre):
     americanasLager= AmericanasLager.objects.get(nombre=editarAmericanasLager_nombre)
 
     if request.method == "POST":
-        miFormulario= AmericanasLagerFormulario(request.POST)
+        miFormulario= AmericanasLagerFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -688,7 +696,7 @@ def editarAlemanasChecasAustriacasLager(request, editarAlemanasChecasAustriacasL
     alemanasChecasAustriacasLager= AlemanasChecasAustriacasLager.objects.get(nombre=editarAlemanasChecasAustriacasLager_nombre)
 
     if request.method == "POST":
-        miFormulario= AlemanasChecasAustriacasLagerFormulario(request.POST)
+        miFormulario= AlemanasChecasAustriacasLagerFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -728,7 +736,7 @@ def editarInternacionalesLager(request, editarInternacionalesLager_nombre):
     internacionalesLager= InternacionalesLager.objects.get(nombre=editarInternacionalesLager_nombre)
 
     if request.method == "POST":
-        miFormulario= InternacionalesLagerFormulario(request.POST)
+        miFormulario= InternacionalesLagerFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -768,7 +776,7 @@ def editarOtras(request, editarOtras_nombre):
     otras= Otras.objects.get(nombre=editarOtras_nombre)
 
     if request.method == "POST":
-        miFormulario= OtrasFormulario(request.POST)
+        miFormulario= OtrasFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 

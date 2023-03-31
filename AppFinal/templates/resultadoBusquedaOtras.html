@@ -25,7 +25,9 @@
             <li> Proceso de Coccion: {{otras.procesoDeCoccion}} </li>
             <li> Email de Contacto: {{otras.emailDeContacto}} </li>
             <li> Fecha de Publicacion: {{otras.fechaDePublicacion}} </li>
-            <li> {{otras.imagen}} </li>
+            <li>{% if otras.imagen %} 
+                <img src="{{ otras.imagen.url }}" alt="mcmd">
+            {% endif %}</li>
         {% endfor %}
     </ul>
 

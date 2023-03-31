@@ -25,7 +25,9 @@
             <li> Proceso de Coccion: {{britanicasAle.procesoDeCoccion}} </li>
             <li> Email de Contacto: {{britanicasAle.emailDeContacto}} </li>
             <li> Fecha de Publicacion: {{britanicasAle.fechaDePublicacion}} </li>
-            <li> {{britanicasAle.imagen}} </li>
+            <li>{% if britanicasAle.imagen %} 
+                <img src="{{ britanicasAle.imagen.url }}" alt="mcmd">
+            {% endif %}</li>
         {% endfor %}
     </ul>
     {% else %}

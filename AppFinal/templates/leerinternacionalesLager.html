@@ -6,12 +6,16 @@
 
 <body>
     <li>Internacionales Lager</li>
-    
-    {% for p in internacionalesLager %}
-    <li> {{p}} 
-        <a class="btn btn-primary" href="{% url 'AppFinal:eliminarInternacionalesLager' p.nombre %}">ELIMINAR RECETA</a>
-        <a class="btn btn-primary" href="{% url 'AppFinal:editarInternacionalesLager' p.nombre %}">EDITAR RECETA</a>
-    </li>
+    {% for p in internacionalesLager%}
+        {% if p.nombre %}
+        <li> {{p}} </li>
+        <li>    {% if p.imagen %} 
+                <img src=" {{p.imagen.url}} " alt="mcmd">
+            {% endif %} </li>
+            <a class="btn btn-primary" href="{% url 'AppFinal:eliminarInternacionalesLager' p.nombre %}">ELIMINAR RECETA</a>
+            <a class="btn btn-primary" href="{% url 'AppFinal:editarInternacionalesLager'  p.nombre %}">EDITAR RECETA</a>
+        </li>
+        {% endif %}
     {% endfor %}
 
     <br>

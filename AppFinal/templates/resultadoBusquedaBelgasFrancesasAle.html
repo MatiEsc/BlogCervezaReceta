@@ -25,7 +25,9 @@
             <li> Proceso de Coccion: {{belgasFrancesasAle.procesoDeCoccion}} </li>
             <li> Email de Contacto: {{belgasFrancesasAle.emailDeContacto}} </li>
             <li> Fecha de Publicacion: {{belgasFrancesasAle.fechaDePublicacion}} </li>
-            <li> {{belgasFrancesasAle.imagen}} </li>
+            <li>{% if belgasFrancesasAle.imagen %} 
+                <img src="{{ belgasFrancesasAle.imagen.url }}" alt="mcmd">
+            {% endif %}</li>
         {% endfor %}
     </ul>
 

@@ -8,7 +8,11 @@
     <li>Americanas Ale</li>
     {% for p in americanasAle %}
         {% if p.nombre %}
-        <li> {{p}} 
+        <li> {{p}} </li>
+        <li>    {% if p.imagen %} 
+                <img src=" {{p.imagen.url}} " alt="mcmd">
+            {% endif %}
+        </li>
             <a class="btn btn-primary" href="{% url 'AppFinal:eliminarAmericanasAle' p.nombre %}">ELIMINAR RECETA</a>
             <a class="btn btn-primary" href="{% url 'AppFinal:editarAmericanasAle'  p.nombre %}">EDITAR RECETA</a>
         </li>

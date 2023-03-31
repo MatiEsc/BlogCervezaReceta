@@ -25,7 +25,9 @@
             <li> Proceso de Coccion: {{alemanasChecasAustriacasAle.procesoDeCoccion}} </li>
             <li> Email de Contacto: {{alemanasChecasAustriacasAle.emailDeContacto}} </li>
             <li> Fecha de Publicacion: {{alemanasChecasAustriacasAle.fechaDePublicacion}} </li>
-            <li> {{alemanasChecasAustriacasAle.imagen}} </li>
+            <li>{% if alemanasChecasAustriacasAle.imagen %} 
+                <img src="{{ alemanasChecasAustriacasAle.imagen.url }}" alt="mcmd">
+            {% endif %}</li>
         {% endfor %}
     </ul>
 
