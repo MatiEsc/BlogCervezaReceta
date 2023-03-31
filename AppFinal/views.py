@@ -22,7 +22,7 @@ def inicio(request):
 
 def americanasAle(request):
     if request.method == 'POST':
-        miFormulario = AmericanasAleFormulario(request.POST)
+        miFormulario = AmericanasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -450,7 +450,7 @@ def editarAmericanasAle(request, americanasAle_nombre):
     americanasAle= AmericanasAle.objects.get(nombre=americanasAle_nombre)
 
     if request.method == "POST":
-        miFormulario= AmericanasAleFormulario(request.POST)
+        miFormulario= AmericanasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -800,7 +800,7 @@ def editarOtras(request, editarOtras_nombre):
                                                         "imagen": otras.imagen})
             
         return render (request, "editarOtras.html",
-                            {"miFormulario":miFormulario, "editarOtras_nombre":editarOtras_nombre})
+                            {"miFormulario":miFormulario, "otras_nombre":editarOtras_nombre})
 
 def eliminarAmericanasAle(request, americanasAle_nombre):
     americanasAle= AmericanasAle.objects.get(nombre=americanasAle_nombre)
@@ -960,3 +960,7 @@ def agregarAvatar(request):
     else:
         miFormulario = AvatarFormulario()
     return render(request, 'agregarAvatar.html', {'miFormulario':miFormulario})
+
+
+def acercaDeMi (request):
+    return render(request, 'acercaDeMi.html', {})

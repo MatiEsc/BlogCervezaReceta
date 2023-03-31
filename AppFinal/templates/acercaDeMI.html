@@ -1,0 +1,42 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<br>
+<br>
+<link rel="stylesheet" href="{% static 'bootstrap-icons-1.9.0/bootstrap-icons.css' %}">
+<div class="container">
+  <h2 class="text-center text-white">
+    Acerca de Mi
+  </h2>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-3 text-center">
+      <img src="{% static 'AppFinal/Mati.jpeg' %}" class="mb-3" width="150px">
+      <h3 class="card-title mb-3">Matias Ezequiel Escobar</h3>
+      <p class="card-text">Alumno en el curso de Python de Coderhouse</p>
+      <p class="card-text">Sigueme en:</p>
+      <a class="btn btn-dark btn-social mx-2" href="https://github.com/MatiEsc" aria-label="bi-github"><i class="fab fa-github"></i></a>
+      <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/matias-escobar-a46082259" aria-label="bi-linkedin"><i class="fab fa-linkedin"></i></a>      
+     
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-8">
+      <div class="text-center">
+        <p>Hola! Mi nombre es Mati y recientemente me estoy adentrando en el mundo IT. Actualmente estoy aprendiendo el lenguaje de programación Python y el Framework Django.
+            hace mas de 12 años soy abogado y estuve mas de 10 años trabajando en el Poder Judicial de la Provincia de Buenos Aires. Sin miedo a los cambios grandes decidí salir de mi zona de confort y estudiar lo que alguna vez me llamo mucho la atención poniendome a prueba una vez mas. 
+            Gracias por visitar mi página y puedes visitarme en las redes sociales. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
