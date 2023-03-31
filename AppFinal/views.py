@@ -37,7 +37,8 @@ def americanasAle(request):
                                           adicionales=informacion["adicionales"],
                                           procesoDeCoccion=informacion['proceso_De_Coccion'],
                                           emailDeContacto=informacion["email_De_Contacto"],
-                                          fechaDePublicacion=informacion["fecha_De_Publicacion"])
+                                          fechaDePublicacion=informacion["fecha_De_Publicacion"],
+                                          imagen=informacion["imagen"])
 
             americanasAle.save()
 
