@@ -1,0 +1,44 @@
+
+
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+ 
+
+
+
+<body>
+    
+
+    {% if otras %}
+    <p>La receta con el nombre  {{nombre}} es: </p>
+    <ul>
+        {% for otras in otras %}
+            <li> Nombre: {{otras.nombre}} </li>
+            <li> Maltas: {{otras.maltas}} </li>
+            <li> Lupulo: {{otras.lupulo}} </li>
+            <li> Levadura: {{otras.levadura}} </li>
+            <li> Proceso de Coccion: {{otras.procesoDeCoccion}} </li>
+            <li> Email de Contacto: {{otras.emailDeContacto}} </li>
+            <li> Fecha de Publicacion: {{otras.fechaDePublicacion}} </li>
+            <li> {{otras.imagen}} </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p>La receta que se busca no se encuentra.</p>
+    {% endif %}
+ 
+    <p>VOLVER A BUSCAR</p>
+
+    
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaOtras"%}">Otras</a>
+
+</body>
+</html>
+
+{% endblock %}

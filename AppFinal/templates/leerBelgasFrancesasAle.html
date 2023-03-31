@@ -5,7 +5,7 @@
 {% block contenidoQueCambia %}
 
 <body>
-    
+    <li>Belgas Francesas</li>
     {% for p in belgasFrancesasAle %}
     <li> {{p}} 
         <a class="btn btn-primary" href="{% url 'AppFinal:eliminarBelgasFrancesasAle' p.nombre %}">ELIMINAR RECETA</a>

@@ -1,0 +1,44 @@
+
+
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+ 
+
+
+
+<body>
+    
+
+    {% if americanasLager %}
+    <p>La receta con el nombre  {{nombre}} es: </p>
+    <ul>
+        {% for americanasLager in americanasLager %}
+            <li> Nombre: {{americanasLager.nombre}} </li>
+            <li> Maltas: {{americanasLager.maltas}} </li>
+            <li> Lupulo: {{americanasLager.lupulo}} </li>
+            <li> Levadura: {{americanasLager.levadura}} </li>
+            <li> Proceso de Coccion: {{americanasLager.procesoDeCoccion}} </li>
+            <li> Email de Contacto: {{americanasLager.emailDeContacto}} </li>
+            <li> Fecha de Publicacion: {{americanasLager.fechaDePublicacion}} </li>
+            <li> {{americanasLager.imagen}} </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p>La receta que se busca no se encuentra.</p>
+    {% endif %}
+ 
+    <p>VOLVER A BUSCAR</p>
+
+    
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaAmericanasLager"%}">Americanas Lager</a>
+
+</body>
+</html>
+
+{% endblock %}

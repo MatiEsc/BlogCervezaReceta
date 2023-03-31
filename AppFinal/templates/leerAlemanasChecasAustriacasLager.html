@@ -5,8 +5,8 @@
 {% block contenidoQueCambia %}
 
 <body>
-    
-    {% for p in AlemanasChecasAustriacasLager %}
+    <LI>Alemanas Checas Austriacas Lager</LI>
+    {% for p in alemanasChecasAustriacasLager %}
     <li> {{p}} 
         <a class="btn btn-primary" href="{% url 'AppFinal:eliminarAlemanasChecasAustriacasLager' p.nombre %}">ELIMINAR RECETA</a>
         <a class="btn btn-primary" href="{% url 'AppFinal:editarAlemanasChecasAustriacasLager'  %}">EDITAR RECETA</a>
@@ -14,7 +14,7 @@
     {% endfor %}
 
     <br>
-    <a class="btn btn-primary" href="{% url 'AppFinal:AlemanasChecasAustriacasLager' %}">AGREGAR RECETA</a>
+    <a class="btn btn-primary" href="{% url 'AppFinal:alemanasChecasAustriacasLager' %}">AGREGAR RECETA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
                 

@@ -1,0 +1,40 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>BUSCAR RECETAS</h1>
+    <p>Elegi el estilo de las recetas que deseas buscar</p>
+    <p>ALE</p>
+    
+                
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaAmericanasAle"%}">Americanas Ale</a>
+    
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaAlemanasChecasAustriacasAle"%}">Alemanas Checas Austriacas Ale</a>
+
+
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaBelgasFrancesasAle"%}">Belgas Francesas Ale</a>
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaBritanicasAle"%}">Britanicas Ale</a>
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaInternacionalesAle"%}">Internacionales Ale</a>
+        
+
+
+    
+    <p>LAGER</p>
+
+  
+                    
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaAmericanasLager"%}">Americanas Lager</a>
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaAlemanasChecasAustriacasLager"%}">Alemanas Checas Austriacas Lager</a>
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaInternacionalesLager"%}">Internacionales Lager</a>
+        
+
+    <p>OTRAS</p>
+
+    
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaOtras"%}">Otras</a>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+
+
+
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+ 
+
+
+
+<body>
+    
+
+    {% if internacionalesAle %}
+    <p>La receta con el nombre  {{nombre}} es: </p>
+    <ul>
+        {% for internacionalesAle in internacionalesAle %}
+            <li> Nombre: {{internacionalesAle.nombre}} </li>
+            <li> Maltas: {{internacionalesAle.maltas}} </li>
+            <li> Lupulo: {{internacionalesAle.lupulo}} </li>
+            <li> Levadura: {{internacionalesAle.levadura}} </li>
+            <li> Proceso de Coccion: {{internacionalesAle.procesoDeCoccion}} </li>
+            <li> Email de Contacto: {{internacionalesAle.emailDeContacto}} </li>
+            <li> Fecha de Publicacion: {{internacionalesAle.fechaDePublicacion}} </li>
+            <li> {{internacionalesAle.imagen}} </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>La receta que se busca no se encuentra.</p>
+    {% endif %}
+    <p>VOLVER A BUSCAR</p>
+
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaInternacionalesAle"%}">Internacionales Ale</a>
+
+
+</body>
+</html>
+
+{% endblock %}

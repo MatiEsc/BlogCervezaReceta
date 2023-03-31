@@ -1,0 +1,44 @@
+
+
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+ 
+
+
+
+<body>
+    
+
+    {% if belgasFrancesasAle %}
+    <p>La receta con el nombre  {{nombre}} es: </p>
+    <ul>
+        {% for belgasFrancesasAle in belgasFrancesasAle %}
+            <li> Nombre: {{belgasFrancesasAle.nombre}} </li>
+            <li> Maltas: {{belgasFrancesasAle.maltas}} </li>
+            <li> Lupulo: {{belgasFrancesasAle.lupulo}} </li>
+            <li> Levadura: {{belgasFrancesasAle.levadura}} </li>
+            <li> Proceso de Coccion: {{belgasFrancesasAle.procesoDeCoccion}} </li>
+            <li> Email de Contacto: {{belgasFrancesasAle.emailDeContacto}} </li>
+            <li> Fecha de Publicacion: {{belgasFrancesasAle.fechaDePublicacion}} </li>
+            <li> {{belgasFrancesasAle.imagen}} </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p>La receta que se busca no se encuentra.</p>
+    {% endif %}
+ 
+    <p>VOLVER A BUSCAR</p>
+
+    
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaBelgasFrancesasAle"%}">Belgas Francesas Ale</a>
+    
+</body>
+</html>
+
+{% endblock %}

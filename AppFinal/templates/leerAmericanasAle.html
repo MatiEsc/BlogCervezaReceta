@@ -4,30 +4,21 @@
 
 {% block contenidoQueCambia %}
 
-
 <body>
-    
+    <li>Americanas Ale</li>
     {% for p in americanasAle %}
-    <li> {{p}} </li>
-    <button>
-        <a class="btn btn-primary" href="{% url 'AppFinal:eliminarAmericanasAle' p.id %}">ELIMINAR RECETA</a>
+    <li> {{p}} 
+        <a class="btn btn-primary" href="{% url 'AppFinal:eliminarAmericanasAle' p.nombre %}">ELIMINAR RECETA</a>
         <a class="btn btn-primary" href="{% url 'AppFinal:editarAmericanasAle'  %}">EDITAR RECETA</a>
-    </button>
-
-    
+    </li>
     {% endfor %}
-    
-<br>
 
+    <br>
+    <a class="btn btn-primary" href="{% url 'AppFinal:americanasAle' %}">AGREGAR RECETA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+                
+    </div>
 </body>
 
-            <a class="btn btn-primary" href="{% url "AppFinal:americanasAle"%}">AGREGAR RECETA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                
-            </div>
-        </div>
-    </nav>
-
 {% endblock %}
-

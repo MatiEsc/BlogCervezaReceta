@@ -18,9 +18,11 @@ from django.contrib.auth.hashers import make_password
 def inicio(request):
     return render(request, "inicio.html")
 
+
+
 def americanasAle(request):
     if request.method == 'POST':
-        miFormulario = AmericanasAleFormulario(request.POST)
+        miFormulario = AmericanasAleFormulario(request.POST, request.FILES)
 
         print(miFormulario)
 
@@ -276,6 +278,127 @@ def cargarReceta(request):
 
 def mostrarReceta(request):
     return render(request, "mostrarReceta.html")
+
+def mostrarBusquedaReceta(request):
+    return render(request, "mostrarBusquedaReceta.html")
+
+def busquedaAmericanasAle(request):
+    return render(request,"busquedaAmericanasAle.html")
+
+def buscarAmericanasAle(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        americanasAle = AmericanasAle.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaAmericanasAle.html", {"americanasAle":americanasAle, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaAmericanasAle.html", {"mensaje": mensaje})
+
+
+def busquedaAlemanasChecasAustriacasAle(request):
+    return render(request,"busquedaAlemanasChecasAustriacasAle.html")
+
+def buscarAlemanasChecasAustriacasAle(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        alemanasChecasAustriacasAle = AlemanasChecasAustriacasAle.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaAlemanasChecasAustriacasAle.html", {"alemanasChecasAustriacasAle":alemanasChecasAustriacasAle, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaAlemanasChecasAustriacasAle.html", {"mensaje": mensaje})
+
+
+def busquedaBelgasFrancesasAle(request):
+    return render(request,"busquedaBelgasFrancesasAle.html")
+
+
+def buscarBelgasFrancesasAle(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        belgasFrancesasAle = BelgasFrancesasAle.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaBelgasFrancesasAle.html", {"belgasFrancesasAle":belgasFrancesasAle, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaBelgasFrancesasAle.html", {"mensaje": mensaje})
+
+
+def busquedaBritanicasAle(request):
+    return render(request,"busquedaBritanicasAle.html")
+
+
+def buscarBritanicasAle(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        britanicasAle = BritanicasAle.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaBritanicasAle.html", {"britanicasAle":britanicasAle, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaBritanicasAle.html", {"mensaje": mensaje})
+
+
+def busquedaInternacionalesAle(request):
+    return render(request,"busquedaInternacionalesAle.html")
+
+def buscarInternacionalesAle(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        internacionalesAle = InternacionalesAle.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaInternacionalesAle.html", {"internacionalesAle":internacionalesAle, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaInternacionalesAle.html", {"mensaje": mensaje})
+
+
+def busquedaAmericanasLager(request):
+    return render(request,"busquedaAmericanasLager.html")
+
+def buscarAmericanasLager(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        americanasLager = AmericanasLager.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaAmericanasLager.html", {"americanasLager":americanasLager, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaAmericanasLager.html", {"mensaje": mensaje})
+
+
+def busquedaAlemanasChecasAustriacasLager(request):
+    return render(request,"busquedaAlemanasChecasAustriacasLager.html")
+
+def buscarAlemanasChecasAustriacasLager(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        alemanasChecasAustriacasLager = AlemanasChecasAustriacasLager.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaAlemanasChecasAustriacasLager.html", {"alemanasChecasAustriacasLager":alemanasChecasAustriacasLager, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaAlemanasChecasAustriacasLager.html", {"mensaje": mensaje})
+
+
+def busquedaInternacionalesLager(request):
+    return render(request,"busquedaInternacionalesLager.html")
+
+def buscarInternacionalesLager(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        internacionalesLager = InternacionalesLager.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaInternacionalesLager.html", {"internacionalesLager":internacionalesLager, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaInternacionalesLager.html", {"mensaje": mensaje})
+
+def busquedaOtras(request):
+    return render(request,"busquedaOtras.html")
+
+def buscarOtras(request):
+    nombre = request.GET.get('nombre')
+    if nombre:
+        otras = Otras.objects.filter(nombre__icontains=nombre)
+        return render(request, "resultadoBusquedaOtras.html", {"otras":otras, "nombre": nombre})
+    else:
+        mensaje = "No se ha especificado el nombre de la receta a buscar."
+        return render(request, "busquedaOtras.html", {"mensaje": mensaje})
+
 
 def leerAmericanasAle(request):
     americanasAle= AmericanasAle.objects.all()

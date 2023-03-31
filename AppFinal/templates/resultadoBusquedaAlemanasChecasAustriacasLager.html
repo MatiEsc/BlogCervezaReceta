@@ -1,0 +1,44 @@
+
+
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+ 
+
+
+
+<body>
+    
+
+    {% if alemanasChecasAustriacasLager %}
+    <p>La receta con el nombre  {{nombre}} es: </p>
+    <ul>
+        {% for alemanasChecasAustriacasLager in alemanasChecasAustriacasLager %}
+            <li> Nombre: {{alemanasChecasAustriacasLager.nombre}} </li>
+            <li> Maltas: {{alemanasChecasAustriacasLager.maltas}} </li>
+            <li> Lupulo: {{alemanasChecasAustriacasLager.lupulo}} </li>
+            <li> Levadura: {{alemanasChecasAustriacasLager.levadura}} </li>
+            <li> Proceso de Coccion: {{alemanasChecasAustriacasLager.procesoDeCoccion}} </li>
+            <li> Email de Contacto: {{alemanasChecasAustriacasLager.emailDeContacto}} </li>
+            <li> Fecha de Publicacion: {{alemanasChecasAustriacasLager.fechaDePublicacion}} </li>
+            <li> {{alemanasChecasAustriacasLager.imagen}} </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p>La receta que se busca no se encuentra.</p>
+    {% endif %}
+ 
+    <p>VOLVER A BUSCAR</p>
+
+    
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaAlemanasChecasAustriacasLager"%}">Alemanas Checas Austriacas Lager</a>
+
+</body>
+</html>
+
+{% endblock %}

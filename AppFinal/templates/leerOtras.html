@@ -5,7 +5,7 @@
 {% block contenidoQueCambia %}
 
 <body>
-    
+    <li>Otras</li>
     {% for p in otras %}
     <li> {{p}} 
         <a class="btn btn-primary" href="{% url 'AppFinal:eliminarOtras' p.nombre %}">ELIMINAR RECETA</a>

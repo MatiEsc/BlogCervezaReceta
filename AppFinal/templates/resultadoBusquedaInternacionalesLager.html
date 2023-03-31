@@ -1,0 +1,44 @@
+
+
+
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+ 
+
+
+
+<body>
+    
+
+    {% if internacionalesLager %}
+    <p>La receta con el nombre  {{nombre}} es: </p>
+    <ul>
+        {% for internacionalesLager in internacionalesLager %}
+            <li> Nombre: {{internacionalesLager.nombre}} </li>
+            <li> Maltas: {{internacionalesLager.maltas}} </li>
+            <li> Lupulo: {{internacionalesLager.lupulo}} </li>
+            <li> Levadura: {{internacionalesLager.levadura}} </li>
+            <li> Proceso de Coccion: {{internacionalesLager.procesoDeCoccion}} </li>
+            <li> Email de Contacto: {{internacionalesLager.emailDeContacto}} </li>
+            <li> Fecha de Publicacion: {{internacionalesLager.fechaDePublicacion}} </li>
+            <li> {{internacionalesLager.imagen}} </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>La receta que se busca no se encuentra.</p>
+    {% endif %}
+    <p>VOLVER A BUSCAR</p>
+
+    
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaInternacionalesLager"%}">Internacionales Lager</a>
+
+
+</body>
+</html>
+
+{% endblock %}

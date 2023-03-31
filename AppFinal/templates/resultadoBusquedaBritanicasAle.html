@@ -1,0 +1,44 @@
+
+
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+ 
+
+
+
+<body>
+    
+
+    {% if britanicasAle %}
+    <p>La receta con el nombre  {{nombre}} es: </p>
+    <ul>
+        {% for britanicasAle in britanicasAle %}
+            <li> Nombre: {{britanicasAle.nombre}} </li>
+            <li> Maltas: {{britanicasAle.maltas}} </li>
+            <li> Lupulo: {{britanicasAle.lupulo}} </li>
+            <li> Levadura: {{britanicasAle.levadura}} </li>
+            <li> Proceso de Coccion: {{britanicasAle.procesoDeCoccion}} </li>
+            <li> Email de Contacto: {{britanicasAle.emailDeContacto}} </li>
+            <li> Fecha de Publicacion: {{britanicasAle.fechaDePublicacion}} </li>
+            <li> {{britanicasAle.imagen}} </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>La receta que se busca no se encuentra.</p>
+    {% endif %}
+    <p>VOLVER A BUSCAR</p>
+
+    <a class="navbar-brand" href="{% url "AppFinal:busquedaBritanicasAle"%}">Britanicas Ale</a>
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
