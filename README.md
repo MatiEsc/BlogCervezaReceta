@@ -21,6 +21,23 @@ Cambiar la contraseña de Usuario
 Cerrar Sesión
 Login en caso de haber cerrado sesión
 
+Listado de links del proyecto:
+Inicio: http://127.0.0.1:8000/AppFinal/login?next=/AppFinal/
+si no estas registrado: http://127.0.0.1:8000/AppFinal/register
+
+Editar perfil de usuario:http://127.0.0.1:8000/AppFinal/editarPerfil
+Agregar avatar de usuario: http://127.0.0.1:8000/AppFinal/agregarAvatar
+
+Cargar una Receta: http://127.0.0.1:8000/AppFinal/cargarReceta
+  Aqui podras elegir que estilo cargar haciendo click en cada uno de ellos.
+ 
+ Mostrar Recetas: http://127.0.0.1:8000/AppFinal/mostrar
+  Aqui podras elegir primeramente el estilo haciendo click en alguno uno de ellos para que luego muestre el listado de recetas cargadas.
+ 
+ Buscar Recetas: http://127.0.0.1:8000/AppFinal/mostrarBusquedaReceta
+  Aqui podras elegir primeramente el estilo haciendo click en alguno uno de ellos, mas luego se abrira el campo para buscar por nombre de la receta en las que esten cargadas en la base de datos.
+  
+  Finalmente se encuentran botones de "Twitter", "Facebook" e "Intagram" que rediccionaran al usuario a las redes sociales.- 
 
 
 ############################################################################
