@@ -23,7 +23,7 @@ Login en caso de haber cerrado sesión
 
 
 
-
+############################################################################
 Nota: La opción de editar y eliminar instrumentos musicales solo le está permitido al autor de la publicación del instrumento.
 
 Tecnología Utilizada
