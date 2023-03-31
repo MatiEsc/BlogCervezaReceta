@@ -10,9 +10,9 @@ class AmericanasAleFormulario(forms.Form):
     lupulo=forms.CharField(max_length=40)
     levadura=forms.CharField(max_length=40)
     adicionales=forms.CharField(max_length=40)
-    procesoDeCoccion=forms.CharField(max_length=200)
-    emailDeContacto=forms.EmailField()
-    fechaDePublicacion=forms.DateTimeField(initial=timezone.now, widget=forms.DateTimeInput())
+    proceso_De_Coccion=forms.CharField(max_length=200)
+    email_De_Contacto=forms.EmailField()
+    fecha_De_Publicacion=forms.DateTimeField(initial=timezone.now, widget=forms.DateTimeInput())
     imagen = forms.ImageField(required=False)
 
 class AlemanasChecasAustriacasAleFormulario(forms.Form):

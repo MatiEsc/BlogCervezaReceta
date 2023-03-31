@@ -6,10 +6,11 @@
 
 <body>
     <li>Internacionales Lager</li>
+    
     {% for p in internacionalesLager %}
     <li> {{p}} 
         <a class="btn btn-primary" href="{% url 'AppFinal:eliminarInternacionalesLager' p.nombre %}">ELIMINAR RECETA</a>
-        <a class="btn btn-primary" href="{% url 'AppFinal:editarInternacionalesLager'  %}">EDITAR RECETA</a>
+        <a class="btn btn-primary" href="{% url 'AppFinal:editarInternacionalesLager' p.nombre %}">EDITAR RECETA</a>
     </li>
     {% endfor %}
 

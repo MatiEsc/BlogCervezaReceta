@@ -22,7 +22,7 @@ def inicio(request):
 
 def americanasAle(request):
     if request.method == 'POST':
-        miFormulario = AmericanasAleFormulario(request.POST, request.FILES)
+        miFormulario = AmericanasAleFormulario(request.POST)
 
         print(miFormulario)
 
@@ -30,8 +30,7 @@ def americanasAle(request):
 
             informacion = miFormulario.cleaned_data
             
-            americanasAle = AmericanasAle(
-                                          nombre=informacion['nombre'],
+            americanasAle = AmericanasAle(nombre=informacion['nombre'],
                                           maltas=informacion['maltas'],
                                           lupulo=informacion["lupulo"],
                                           levadura=informacion["levadura"],
@@ -47,6 +46,7 @@ def americanasAle(request):
         miFormulario = AmericanasAleFormulario()
     
     return render(request, 'americanasAle.html', {'miFormulario':miFormulario})
+
 
 
 
@@ -563,8 +563,8 @@ def editarBelgasFrancesasAle(request, belgasFrancesasAle_nombre):
         return render (request, "editarBelgasFrancesasAle.html",
                             {"miFormulario":miFormulario, "belgasFrancesasAle_nombre":belgasFrancesasAle_nombre})
 
-def editarBritanicasAle(request, britanicasAle_nombre):
-    britanicasAle= BritanicasAle.objects.get(nombre=britanicasAle_nombre)
+def editarBritanicasAle(request, editarBritanicasAle_nombre):
+    britanicasAle= BritanicasAle.objects.get(nombre=editarBritanicasAle_nombre)
 
     if request.method == "POST":
         miFormulario= BritanicasAleFormulario(request.POST)
@@ -600,11 +600,11 @@ def editarBritanicasAle(request, britanicasAle_nombre):
                                                         "imagen": britanicasAle.imagen})
             
         return render (request, "editarBritanicasAle.html",
-                            {"miFormulario":miFormulario, "britanicasAle_nombre":britanicasAle_nombre})
+                            {"miFormulario":miFormulario, "editarBritanicasAle_nombre":editarBritanicasAle_nombre})
 
 
-def editarInternacionalesAle(request, internacionalesAle_nombre):
-    internacionalesAle= InternacionalesAle.objects.get(nombre=internacionalesAle_nombre)
+def editarInternacionalesAle(request, editarInternacionalesAle_nombre):
+    internacionalesAle= InternacionalesAle.objects.get(nombre=editarInternacionalesAle_nombre)
 
     if request.method == "POST":
         miFormulario= InternacionalesAleFormulario(request.POST)
@@ -640,11 +640,11 @@ def editarInternacionalesAle(request, internacionalesAle_nombre):
                                                         "imagen": internacionalesAle.imagen})
             
         return render (request, "editarInternacionalesAle.html",
-                            {"miFormulario":miFormulario, "internacionalesAle_nombre":internacionalesAle_nombre})
+                            {"miFormulario":miFormulario, "editarInternacionalesAle_nombre":editarInternacionalesAle_nombre})
 
 
-def editarAmericanasLager(request, americanasLager_nombre):
-    americanasLager= AmericanasLager.objects.get(nombre=americanasLager_nombre)
+def editarAmericanasLager(request, editarAmericanasLager_nombre):
+    americanasLager= AmericanasLager.objects.get(nombre=editarAmericanasLager_nombre)
 
     if request.method == "POST":
         miFormulario= AmericanasLagerFormulario(request.POST)
@@ -680,11 +680,11 @@ def editarAmericanasLager(request, americanasLager_nombre):
                                                         "imagen": americanasLager.imagen})
             
         return render (request, "editarAmericanasLager.html",
-                            {"miFormulario":miFormulario, "americanasLager_nombre":americanasLager_nombre})
+                            {"miFormulario":miFormulario, "editarAmericanasLager_nombre":editarAmericanasLager_nombre})
 
 
-def editarAlemanasChecasAustriacasLager(request, alemanasChecasAustriacasLager_nombre):
-    alemanasChecasAustriacasLager= AlemanasChecasAustriacasLager.objects.get(nombre=alemanasChecasAustriacasLager_nombre)
+def editarAlemanasChecasAustriacasLager(request, editarAlemanasChecasAustriacasLager_nombre):
+    alemanasChecasAustriacasLager= AlemanasChecasAustriacasLager.objects.get(nombre=editarAlemanasChecasAustriacasLager_nombre)
 
     if request.method == "POST":
         miFormulario= AlemanasChecasAustriacasLagerFormulario(request.POST)
@@ -719,12 +719,12 @@ def editarAlemanasChecasAustriacasLager(request, alemanasChecasAustriacasLager_n
                                                         "fechaDePublicacion": alemanasChecasAustriacasLager.fechaDePublicacion,
                                                         "imagen": alemanasChecasAustriacasLager.imagen})
             
-        return render (request, "editarAlemanasChecasAustriacasLager.html",
-                            {"miFormulario":miFormulario, "alemanasChecasAustriacasLager_nombre":alemanasChecasAustriacasLager_nombre})
+        return render (request, "editarAlemanasChecasAutriacasLager.html",
+                            {"miFormulario":miFormulario, "editarAlemanasChecasAustriacasLager_nombre":editarAlemanasChecasAustriacasLager_nombre})
 
 
-def editarInternacionalesLager(request, internacionalesLager_nombre):
-    internacionalesLager= InternacionalesLager.objects.get(nombre=internacionalesLager_nombre)
+def editarInternacionalesLager(request, editarInternacionalesLager_nombre):
+    internacionalesLager= InternacionalesLager.objects.get(nombre=editarInternacionalesLager_nombre)
 
     if request.method == "POST":
         miFormulario= InternacionalesLagerFormulario(request.POST)
@@ -760,11 +760,11 @@ def editarInternacionalesLager(request, internacionalesLager_nombre):
                                                         "imagen": internacionalesLager.imagen})
             
         return render (request, "editarInternacionalesLager.html",
-                            {"miFormulario":miFormulario, "internacionalesLager_nombre":internacionalesLager_nombre})
+                            {"miFormulario":miFormulario, "editarInternacionalesLager_nombre":editarInternacionalesLager_nombre})
 
 
-def editarOtras(request, otras_nombre):
-    otras= Otras.objects.get(nombre=otras_nombre)
+def editarOtras(request, editarOtras_nombre):
+    otras= Otras.objects.get(nombre=editarOtras_nombre)
 
     if request.method == "POST":
         miFormulario= OtrasFormulario(request.POST)
@@ -800,7 +800,7 @@ def editarOtras(request, otras_nombre):
                                                         "imagen": otras.imagen})
             
         return render (request, "editarOtras.html",
-                            {"miFormulario":miFormulario, "otras_nombre":otras_nombre})
+                            {"miFormulario":miFormulario, "editarOtras_nombre":editarOtras_nombre})
 
 def eliminarAmericanasAle(request, americanasAle_nombre):
     americanasAle= AmericanasAle.objects.get(nombre=americanasAle_nombre)
@@ -808,7 +808,7 @@ def eliminarAmericanasAle(request, americanasAle_nombre):
 
     americanasAle=AmericanasAle.objects.all()
     contexto = {"americanasAle": americanasAle}
-    return render (request, "leerAmericanas.html", contexto)
+    return render (request, "leerAmericanasAle.html", contexto)
 
 def eliminarAlemanasChecasAustriacasAle(request, alemanasChecasAustriacasAle_nombre):
     alemanasChecasAustriacasAle= AlemanasChecasAustriacasAle.objects.get(nombre=alemanasChecasAustriacasAle_nombre)
