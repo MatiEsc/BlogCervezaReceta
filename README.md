@@ -16,10 +16,14 @@ Los usuarios pueden realizar las siguientes accciones:
 En el inicio ver la clasificación de estilos de Cervezas,
 Publicar recetas, pudiendo ponerle un nombre, que tipos de maltas uso, los lupulos, levadura, adicionales, el proceso de coccion como lo realizo, un email de contacto del autor, la fecha de publicación y una imagen
 Visualizar recetas publicadas, las cuales serán distribuidas segun los estilos establecidos por el BJCP, "Americanas Ale", "Alemanas Checas y Austriacas Ale", "Belgas y Francases Ale", "Britanicas Ale", "Internacionales Ale", "Americanas Lager", "Alemanas Checas y Austriacas Lager", "Internacionales Lager" y "otras"
+Buscar y editar las recetas publicadas
 Editar el perfil de Usuario
 Cambiar la contraseña de Usuario
+Agregar avatar al usuario
 Cerrar Sesión
 Login en caso de haber cerrado sesión
+Registrarse 
+
 
 Listado de links del proyecto:
 Inicio: http://127.0.0.1:8000/AppFinal/login?next=/AppFinal/
@@ -36,24 +40,16 @@ Cargar una Receta: http://127.0.0.1:8000/AppFinal/cargarReceta
  
  Buscar Recetas: http://127.0.0.1:8000/AppFinal/mostrarBusquedaReceta
   Aqui podras elegir primeramente el estilo haciendo click en alguno uno de ellos, mas luego se abrira el campo para buscar por nombre de la receta en las que esten cargadas en la base de datos.
-  
-  Finalmente se encuentran botones de "Twitter", "Facebook" e "Intagram" que rediccionaran al usuario a las redes sociales.- 
+
+About: Se muestra reseña personal: http://127.0.0.1:8000/AppFinal/acercaDeMi/
+
+Finalmente se encuentran botones de "Twitter", "Facebook" e "Intagram" que rediccionaran al usuario a las redes sociales.- 
 
 
-############################################################################
-Nota: La opción de editar y eliminar instrumentos musicales solo le está permitido al autor de la publicación del instrumento.
+Tecnología Utilizada, HTML, CSS, Bootstrap, Python y Django
 
-Tecnología Utilizada
-Front-End
-HTML 5
-CSS 3
-Javascript ES6
-Bootstrap 5.2
-Back-End
-Python 3.10.4
-Django 4.0
 Pruebas Realizadas
-Ver archivo titulado "Pruebas Proyecto Python CH.xlsx" el cual se encuentra en el presente repositorio https://github.com/johannesgperez/ProyectoFinalMain.git
+Ver archivo titulado "Pruebas Proyecto Python.xlsx" el cual se encuentra en el presente repositorio https://github.com/MatiEsc/ProyectoFinal
 
 Video Demostración
-https://youtu.be/O3tgo0Txl9Q
+
