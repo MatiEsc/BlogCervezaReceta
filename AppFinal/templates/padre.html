@@ -31,29 +31,28 @@
                         <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:mostrarReceta"%}">Mostrar Recetas</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:mostrarBusquedaReceta"%}">Buscar</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:acercaDeMi"%}">About</a></li>
+                    
                         {% if not request.user.is_authenticated %}
                         
-                        <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:login"%}">Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url "AppRegistro:login"%}">Iniciar Sesión</a></li>
                         {% endif %}
 
                         {% if request.user.is_authenticated %}
-                        
-                        <img height="30px" src="{{url}}" />
+                    
+                        <img height="30px" src="{{url}}"/>
                         <span class="caret"></span>
-                        {{user.username}}
-                        <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:editarPerfil" %}">Editar Perfil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:AgregarAvatar" %}">Agregar Avatar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url "AppFinal:logout" %}">Cerrar Sesión</a></li>
-
+                        {{ user.username }}                
+                            
+                        
+                        
+                        <li class="nav-item"><a class="nav-link" href="{% url "AppRegistro:editarPerfil" %}">Editar Perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url "AppRegistro:AgregarAvatar" %}">Agregar Avatar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url "AppRegistro:logout" %}">Cerrar Sesión</a></li>
 
                     </div>
                 </div>  
 
-
-
-                        
-
-                        {% endif %}
+                            {% endif %}
                         
                     </ul>
                 </div>

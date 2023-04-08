@@ -66,11 +66,11 @@ urlpatterns = [
      path ("eliminarInternacionalesLager/<internacionalesLager_nombre>/", views.eliminarInternacionalesLager, name="eliminarInternacionalesLager"),
      path ("eliminarOtras/<otras_nombre>/", views.eliminarOtras, name="eliminarOtras"),
 
-     path ("login", views.login_request, name="login"),
-     path ("register", views.register, name="register"),
-     path ("logout", LogoutView.as_view(template_name="logout.html"), name="logout"),
-     path ("editarPerfil", views.editarPerfil,  name="editarPerfil"),
-     path('agregarAvatar', views.agregarAvatar, name='AgregarAvatar'),
+     #path ("login", views.login_request, name="login"),
+     #path ("register", views.register, name="register"),
+     #path ("logout", LogoutView.as_view(template_name="logout.html"), name="logout"),
+     #path ("editarPerfil", views.editarPerfil,  name="editarPerfil"),
+     #path('agregarAvatar', views.agregarAvatar, name='AgregarAvatar'),
 
      path("acercaDeMi/", views.acercaDeMi, name="acercaDeMi"),
 

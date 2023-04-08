@@ -143,7 +143,4 @@ class Otras(models.Model):
     def __str__(self):
         return f" nombre: {self.nombre}- maltas: {self.maltas} - lupulo: {self.lupulo} - levadura: {self.levadura} - adicionales: {self.adicionales} - procesoDeCoccion: {self.procesoDeCoccion} - emailDeContacto:{self.emailDeContacto} - fechaDePublicacion:{self.fechaDePublicacion} "
 
-class Avatar(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    imagen = models.ImageField(upload_to="avatares", null=True, blank=True)
 

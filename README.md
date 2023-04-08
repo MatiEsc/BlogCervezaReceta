@@ -26,11 +26,11 @@ Registrarse
 
 
 Listado de links del proyecto:
-Inicio: http://127.0.0.1:8000/AppFinal/login?next=/AppFinal/
-si no estas registrado: http://127.0.0.1:8000/AppFinal/register
+Inicio: http://127.0.0.1:8000/AppRegistro/login?next=/AppFinal/
+si no estas registrado: http://127.0.0.1:8000/AppRegistro/register
 
-Editar perfil de usuario:http://127.0.0.1:8000/AppFinal/editarPerfil
-Agregar avatar de usuario: http://127.0.0.1:8000/AppFinal/agregarAvatar
+Editar perfil de usuario:http://127.0.0.1:8000/AppRegistro/editarPerfil
+Agregar avatar de usuario: http://127.0.0.1:8000/AppRegistro/agregarAvatar
 
 Cargar una Receta: http://127.0.0.1:8000/AppFinal/cargarReceta
   Aqui podras elegir que estilo cargar haciendo click en cada uno de ellos.

@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "AppFinal"
+    "AppFinal",
+    "AppRegistro"
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_URL= "/AppFinal/login"
+LOGIN_URL= "/AppRegistro/login"
 
 MEDIA_URL= "/media/"
 MEDIA_ROOT= os.path.join(BASE_DIR, "media")
